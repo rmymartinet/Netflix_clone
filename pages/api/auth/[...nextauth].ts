@@ -2,10 +2,9 @@ import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { compare } from 'bcrypt';
 import prismadb from '../../../lib/prismadb';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
-
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
 
 export default NextAuth({
   providers: [

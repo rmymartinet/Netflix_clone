@@ -6,8 +6,6 @@ import { FaGithub } from 'react-icons/fa'
 
 import Input from '../components/Input'
 const Auth = () => {
-
-
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
@@ -21,7 +19,7 @@ const Auth = () => {
     const login = useCallback(async () => {
         try {
             await signIn('credentials', {
-                email, password, callbackurl: '/profiles'
+                email, password, callbackUrl: '/profiles'
             })
         } catch (error) {
             console.log(error)
