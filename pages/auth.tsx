@@ -5,6 +5,8 @@ import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
 
 import Input from '../components/Input'
+
+
 const Auth = () => {
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
