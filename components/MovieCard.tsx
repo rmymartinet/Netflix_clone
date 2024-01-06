@@ -1,7 +1,10 @@
 import React from "react";
 import { IoPlay } from "react-icons/io5";
 import FavoriteButton from "./FavoriteButton";
-import { useRouter } from "next/router.js";
+import { useRouter } from "next/router";
+import useModalInfo from "../hooks/useInfoModal";
+import { IoChevronDownOutline } from "react-icons/io5";
+
 
 
 interface MovieCardProps {
@@ -10,6 +13,7 @@ interface MovieCardProps {
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
     const router = useRouter()
+    const { openModal } = useModalInfo()
 
 
     return (
@@ -23,6 +27,10 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                             <IoPlay size={20} />
                         </div>
                         <FavoriteButton movieId={data?.id} />
+                        <div className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-white border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
+                            <IoChevronDownOutline onClick={() => openModal(data?.id)} className="text-white group/hover/item:text-neutral-300" size={25} />
+
+                        </div>
                     </div>
                     <p className="text-green-400 font-semibold mt-4">New <span className="text-white">2023</span></p>
                     <div className="flex flex-row items-center gap-2 mt-4">
